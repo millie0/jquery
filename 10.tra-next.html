@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            border: 2px solid rgb(0, 165, 157);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="level-1">
+            <li class="li1">li1</li>
+            <li class="li2">li2
+                <ul class="level-2a">
+                    level-2a
+                    <li class="item0">item0</li>
+                    <li class="item1">item1</li>
+                    <li class="item2">item2</li>
+                    <li class="item3">item3
+                        <ul class="level-3">
+                            <li class="last">last</li>
+                        </ul>
+                    </li>
+                    <li class="item4">item4</li>
+                    <li class="item5">item5</li>
+                    <li class="item6">item6</li>
+                </ul>
+                <ul class="level-2b">
+                    level-2b
+                    <li class="item01">item01</li>
+                </ul>
+                <ul class="level-2c">
+                    level-3b
+                </ul>
+                <ul class="level-2d">
+                    level-3b
+                </ul>
+            </li>
+            <li class="li3">li3</li>
+        </ul>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('.item3').next().css('background', '#a8a')
+        $('.item3').nextAll().css('color', '#ff4')
+        $('.level-2a').nextUntil('.level-2d').css('border-color', '#ccc')
+        // nextALL(同層往下找到這個以上，不包含這個)如果括號內選取器/元素不是在同層(在子孫層)，則沒有停止選取效果
+        $('.item3').prevAll().css('background', '#e88')
+        $('.item3').prev().css('background', '#eE8')
+        $('.item3').prevUntil('.item0').css('color', '#f22')
+    </script>
+</body>
+
+</html>

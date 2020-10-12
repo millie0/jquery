@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 2px solid cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a1">A1</div>
+    <div class="a2">A2</div>
+    <div class="a3">A3</div>
+    <div class="a4">A4</div>
+    <div class="a5">A5
+        <ul class="ul1">
+            ul1
+            <li class="li1">li1</li>
+            <li class="li2">li2</li>
+            <li class="li3">li3</li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(".a2").siblings().css("border-color", "#ffc");
+        $('.li1').siblings().css('color', '#88f')
+    </script>
+</body>
+
+</html>

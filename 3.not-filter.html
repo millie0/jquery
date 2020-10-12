@@ -4,21 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>not-filter</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
-
+        div {
+            margin: 20px;
+        }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="row">
-
-        </div>
+    <div>
+        <input type="checkbox" name="alex">
+        <span>Alex</span>
     </div>
+    <div>
+        <input type="checkbox" name="bill" checked>
+        <span>Bill</span>
+    </div>
+
 
 
 
@@ -34,7 +40,8 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <script>
-
+        $('input:not(:checked) + span').css('background', '#e68')
+        // $(':checkbox:not(:checked) + span').css('color', '#dd8')
     </script>
 </body>
 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>child-filter</title>
+    <style>
+        .box {
+            background-color: #c7d8ed;
+        }
+
+        div {
+            border: 2px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="wrap">
+            <div class="box">box1</div>
+            <div class="box">box2</div>
+            <div class="box">box3</div>
+            <div class="box">box4</div>
+            <div class="box">box5</div>
+            <div class="box">box6</div>
+            <div class="box">box7</div>
+            <div class="box">box8</div>
+            <div class="box">box9</div>
+            <div class="box">box10</div>
+            <div class="box">box11</div>
+            <div class="box">box12</div>
+            <span>box13</span>
+            <!-- box13沒有被選取變色是因為，他是.wrap包裡面的last-child，但是他不是div標籤 -->
+        </div>
+        <div class="wrap">wrap2
+            <p>p</p>
+            <div class="box">box13
+                <div>boox</div>
+            </div>
+            <div class="box">box14
+                <div>box-div</div>
+                <p>box-p</ㄣ>
+            </div>
+            <div class="box">box15</div>
+        </div>
+        <!-- wrap2有被選取變色是因為，他是main包裡面的last-child，且是div標籤 -->
+        <!--●:first-child - 選取第一個
+            ●:last-child - 選取最後一個
+            ●:first-of-type - 選取同類第一個
+            ●:last-of-type - 選取同類最後一個
+            ●:nth-child() - 第 n 個
+            ●:nth-last-child() - 倒數第 n 個
+            ●:nth-of-type()
+            ●:nth-last-of-type()
+            ●:only-child - 選取只有一個的
+            ●:only-of-type
+  -->
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $("div:last-child").css("border-color", "rgb(220,20,100)")
+        // 紅匡
+        // first/last-child:選取一個包裡面的第一個/最後一個，如果前面有家標籤/class選取器則是:選取每個包裡面的第一個/最後一個，且是符合標籤/class name的
+        // div:last-child：選取一個包裡面，是最後一個元素且是div
+        // .box:first-child：選取一個包裡面，是第一個且class name是box的
+        $("div:nth-child(3)").css('background', 'rgb(10,120,100)')
+        // 選取每個包中，第10個且符合指定類別/class name，深綠色
+        $('.box:first-of-type').css('background', 'rgb(120,135,33)')
+        // 選取每個包中，指定類別/class name中的第一個 橄欖綠
+        $('div:only-child').css('color', '#821')
+        // 選取每個包中只有一個小孩，且符合指定類別/class name的
+        $('div:only-of-type').css('font-size', '30px')
+        // 選取每個包中，只有一個符合指定類別/class name的
+    // 假設一個div子層有一個div一個p，用div:only-of-type可以改到子層的div
+    // 但因為子層有兩個元素，用div:only-child改不到任何一個
+    </script>
+</body>
+
+</html>

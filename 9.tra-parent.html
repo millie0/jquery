@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            border: 2px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="level-1">
+            <li class="li1">li1</li>
+            <li class="li2">li2
+                <ul class="level-2">
+                    <li class="item1">item1</li>
+                    <li class="item2">item2</li>
+                    <li class="item3">item3
+                        <ul class="level-3">
+                            <li class="last">last</li>
+                        </ul>
+                    </li>
+                    <li class="item4">item4</li>
+                </ul>
+            </li>
+            <li class="li3">li3</li>
+        </ul>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('.level-3').parent('li').css('border-color', '#9e7').css('background', '#edf')
+        $('.level-3').parents('ul').css('background', '#98e')
+        $('.last').closest('ul').css('color', '#e48')
+        // closest:往父層(祖先層)找最接近的一個
+        // parent:往上找第一層父層去執行
+        // parents:往上找全部父層(祖先層)
+        // parents(找到這層為止):括號內可以打標籤名或class name
+        // parentsUntil(找到這層的前一層):跟上面的差別在於打在括號內的那層父層不包含在選取範圍
+    </script>
+</body>
+
+</html>

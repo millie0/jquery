@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul {
+            border: 2px solid #ccc;
+            width: 100px;
+            padding: 0;
+        }
+
+        li {
+            border: 2px solid #68e;
+            width: 50%;
+            margin: 0 auto;
+            background-color: rgb(218, 226, 250);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <table class="table table-bordered">
+                <tr>
+                    <td>td01</td>
+                    <td>td02</td>
+                    <td>td03</td>
+                    <td>td04</td>
+                    <td>td05</td>
+                </tr>
+                <tr>
+                    <td>td01</td>
+                    <td>td02</td>
+                    <td>td03</td>
+                    <td>td04</td>
+                    <td>td05</td>
+                </tr>
+                <tr>
+                    <td>td01</td>
+                    <td>td02</td>
+                    <td>td03</td>
+                    <td>td04</td>
+                    <td>td05</td>
+                </tr>
+                <tr>
+                    <td>td01</td>
+                    <td>td02</td>
+                    <td>td03</td>
+                    <td>
+                        <h2>td04</h2>
+                    </td>
+                    <td>td05</td>
+                </tr>
+                <tr>
+                    <td>td01</td>
+                    <td>td02</td>
+                    <td>td03</td>
+                    <td>td04</td>
+                    <td>td05</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <ul>
+                ul1
+                <li>li1</li>
+                <li>li2</li>
+                <li>li3</li>
+                <li>li4</li>
+                <li>li5</li>
+            </ul>
+            <ul>
+                ul2
+                <li>li1</li>
+                <li>li2</li>
+                <li>li3</li>
+                <li>li4</li>
+                <li>li5</li>
+            </ul>
+            <ul>
+                ul3
+                <li>li1</li>
+                <li>li2</li>
+                <li>li3</li>
+                <li>li4</li>
+                <li>li5</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(':header').css('background', 'rgb(200,250,200')
+        // :header 選取ｈ１－ｈ６
+        $("td:eq(2)").css("background", "rgb(200,150,150)")
+        // eq(equal):選取第n個：td裡面的第三個(因為0是第一個)
+        // 選取所有td裡面的第三個，不是tr下的每個第三個td都選
+        $("td:odd").css("background", "rgb(200,200,100)")
+        // 選取奇數個（1,3,5,7分別是第2,4,6...個）
+        $('td:even').css('color', 'rgb(299,30,80')
+        // 選取偶數個（0,2,4,6分別是第1,3,5...個）
+        $('li:first').css('background', 'rgb(30,190,180)')
+        // 湖水綠
+        $('ul:last').css('background', 'rgb(250,220,150')
+        // 蛋黃色
+        $('li:gt(6)').css('background', '#ef9744')
+        // gt() greater than 選取大於第7個的 橘色
+        $('li:lt(4)').css('color', 'hotpink')
+        // lt little than選取小於第5個的 粉紅
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+</body>
+
+</html>

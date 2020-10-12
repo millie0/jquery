@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            border: 2px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="level-1">
+            <li class="item1">item1</li>
+            <li class="item2">item2
+                <ul class="level-2">
+                    <li class="item01">item01</li>
+                    <li class="item02">item02</li>
+                    <li class="item03">item03</li>
+                    <li class="item04">item04</li>
+                    <li class="item05">item05</li>
+                </ul>
+            </li>
+            <li class="item3">item3</li>
+            <li class="item4">item4</li>
+            <li class="item5">item5</li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('.level-1').children('li').css('background', '#f68')
+    </script>
+</body>
+
+</html>
