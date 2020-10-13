@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">select</th>
+                <th scope="col">name</th>
+                <th scope="col">cell</th>
+                <th scope="col">e-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    <input type="checkbox">
+                </th>
+                <td>Amy</td>
+                <td>0918237429</td>
+                <td>porky_b7@gmail.com</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <input type="checkbox">
+                </th>
+                <td>Penguin</td>
+                <td>0922837786</td>
+                <td>famousice99@gmail.com</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <input type="checkbox">
+                </th>
+                <td>Mark</td>
+                <td>the 0987688823</td>
+                <td>maybeto9612@gmail.com</td>
+            </tr>
+            <tr>
+                <th scope="row">
+                    <input type="checkbox" checked>
+                </th>
+                <td>Alien</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        $('input').click(function () {
+            console.log('checked', $(this))
+            $(this).closest('tr').css('background', '#8ae')
+        })
+        // $('input:not(:checked)').css('background', 'none')
+        $('input:checked').click(function () {
+            console.log('unchecked', $(this))
+            $(this).closest('tr').css('background', 'none')
+        })
+    </script>
+</body>
+
+</html>
