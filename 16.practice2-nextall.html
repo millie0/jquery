@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
-
+        div {
+            height: 100px;
+        }
     </style>
 </head>
 
@@ -16,43 +18,24 @@
 
     <div class="container">
         <div class="row">
-            <table class="table table-bordered">
-                <tr>
-                    <td class=autobg>td01</td>
-                    <td class=autobg>td02</td>
-                    <td class=autobg>td03</td>
-                    <td class=autobg>td04</td>
-                    <td class=autobg>td05</td>
-                </tr>
-                <tr>
-                    <td class=autobg>td01</td>
-                    <td class=autobg>td02</td>
-                    <td class=autobg>td03</td>
-                    <td class=autobg>td04</td>
-                    <td class=autobg>td05</td>
-                </tr>
-                <tr>
-                    <td class=autobg>td01</td>
-                    <td class=autobg>td02</td>
-                    <td class=autobg>td03</td>
-                    <td class=autobg>td04</td>
-                    <td class=autobg>td05</td>
-                </tr>
-                <tr>
-                    <td class=autobg>td01</td>
-                    <td class=autobg>td02</td>
-                    <td class=autobg>td03</td>
-                    <td class=autobg>td04</td>
-                    <td class=autobg>td05</td>
-                </tr>
-                <tr>
-                    <td class=autobg>td01</td>
-                    <td class=autobg>td02</td>
-                    <td class=autobg>td03</td>
-                    <td class=autobg>td04</td>
-                    <td class=autobg>td05</td>
-                </tr>
-            </table>
+            <div class="autobg col-4">box1</div>
+            <div class="autobg col-4">box2</div>
+            <div class="autobg col-4">box3</div>
+            <div class="autobg col-4">box4</div>
+            <div class="autobg col-4">box5</div>
+            <div class="autobg col-4">box6</div>
+            <div class="autobg col-4">box7</div>
+            <div class="autobg col-4">box8</div>
+            <div class="autobg col-4">box9</div>
+            <div class="autobg col-4">box10</div>
+            <div class="autobg col-4">box11</div>
+            <div class="autobg col-4">box12</div>
+            <div class="autobg col-4">box13</div>
+            <div class="autobg col-4">box14</div>
+            <div class="autobg col-4">box15</div>
+            <div class="autobg col-4">box16</div>
+            <div class="autobg col-4">box17</div>
+            <div class="autobg col-4">box18</div>
         </div>
     </div>
 
@@ -89,9 +72,9 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <script>
-        $('td').click(function () {
-            console.log('clicked', $(this))
-            $(this).gt().css('background', 'lightblue')
+        $('div').click(function () {
+            // console.log('clicked', $(this).index())
+            $(this).css('background', 'lightblue').nextAll($(this).index()).css('background', 'lightblue')
         })
     </script>
 </body>

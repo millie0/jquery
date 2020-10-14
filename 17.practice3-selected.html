@@ -57,9 +57,16 @@
                 crossorigin="anonymous"></script>
             <script>
                 $('li').click(function () {
-                    console.log('clicked', $(this))
-                    $(this).css('border-color', '#e74').siblings().css('border-color', 'white')
+                    console.log('clicked', $(this).siblings())
+                    $(this).css('border-color', '#e74').siblings().css('border-color', 'transparent');
                 })
+                // 點到的li變色，其他兄弟變透明
+
+                // $('li').css('border-color', 'transparent')
+                // $('li').click(function () {
+                //     $(this).css('border-color', '#e74')
+                // })
+                // 每次點按的時候，全部都要先變成透明，再把點到的this變顏色
             </script>
 </body>
 

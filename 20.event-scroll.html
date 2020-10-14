@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>event-scroll</title>
+    <style>
+        body {
+            height: 300vh;
+            width: 300vw;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $(window).scroll(function () {
+            console.log('scrolltop', $(this).scrollTop())
+            console.log('scrollleft', $(this).scrollLeft())
+        })
+        $(window).resize(function () {
+            console.log('window width:', $(this).width())
+            console.log('window height:', $(this).height())
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progressbar</title>
+    <style>
+        body {
+            height: 300vh;
+            margin: 0;
+        }
+
+        /* vh.vw 可是視窗範圍比例，會隨著視窗大小變動 100=100% 300=300%所以progressbar再減去windowheight之前，顯示的比例會是1/3 */
+        .wrap {
+            background-color: #ccc;
+            height: 50px;
+            width: 100%;
+            position: fixed;
+
+        }
+
+        .progressbar {
+            background-color: coral;
+            height: 50px;
+            width: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="progressbar"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // $(window).scroll(function () {
+        //     console.log('scrolltop', $(this).scrollTop())
+        // })
+        let pageheight = $('body').height();
+        let windowheight = $(window).height();
+
+        $(window).scroll(function () {
+            let scrolltop = $(this).scrollTop();
+            let percent = (scrolltop / (pageheight - windowheight)) * 100 + '%';
+
+            $('.progressbar').css('width', percent);
+        })
+
+    </script>
+</body>
+
+</html>

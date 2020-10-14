@@ -50,7 +50,7 @@
             </tr>
             <tr>
                 <th scope="row">
-                    <input type="checkbox" checked>
+                    <input type="checkbox">
                 </th>
                 <td>Alien</td>
                 <td>the Bird</td>
@@ -73,14 +73,18 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <script>
-        $('input').click(function () {
-            console.log('checked', $(this))
-            $(this).closest('tr').css('background', '#8ae')
-        })
-        // $('input:not(:checked)').css('background', 'none')
-        $('input:checked').click(function () {
-            console.log('unchecked', $(this))
-            $(this).closest('tr').css('background', 'none')
+        // $('input').click(function () {
+        //     $('tr').css('background', 'none')
+        //     $('input:checked').closest('tr').css('background', '#8ae')
+        // })
+        $("input[type='checkbox']").click(function () {
+            console.log('checked', $(this).prop('checked'))
+            if ($(this).prop('checked')) {
+                $(this).closest('tr').css('background', 'lightblue')
+            }
+            else (
+                $(this).closest('tr').css('background', 'transparent')
+            )
         })
     </script>
 </body>
