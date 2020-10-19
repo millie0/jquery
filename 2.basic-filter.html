@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>basic-filter</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <style>
@@ -111,17 +111,17 @@
         // :header 選取ｈ１－ｈ６
         $("td:eq(2)").css("background", "rgb(200,150,150)")
         // eq(equal):選取第n個：td裡面的第三個(因為0是第一個)
-        // 選取所有td裡面的第三個，不是tr下的每個第三個td都選
+        // 選取所有td裡面的第三個，不是tr下的每個第三個td都選 [火腿粉]
         $("td:odd").css("background", "rgb(200,200,100)")
-        // 選取奇數個（1,3,5,7分別是第2,4,6...個）
+        // 選取奇數個（1,3,5,7分別是第2,4,6...個）[嘔吐綠]
         $('td:even').css('color', 'rgb(299,30,80')
-        // 選取偶數個（0,2,4,6分別是第1,3,5...個）
+        // 選取偶數個（0,2,4,6分別是第1,3,5...個）[紅]
         $('li:first').css('background', 'rgb(30,190,180)')
-        // 湖水綠
+        // [湖水綠] 
         $('ul:last').css('background', 'rgb(250,220,150')
-        // 蛋黃色
+        // [蛋黃色]
         $('li:gt(6)').css('background', '#ef9744')
-        // gt() greater than 選取大於第7個的 橘色
+        // gt() greater than 選取大於第7個的 [橘色]
         $('li:lt(4)').css('color', 'hotpink')
         // lt little than選取小於第5個的 粉紅
     </script>

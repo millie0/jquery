@@ -39,8 +39,15 @@
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <script>
+        let itemIndex = 3;
+        // 全域變數
         $('#add').on('click', function () {
-            let newItem = '<li>item-n</li>';
+            itemIndex += 1;
+            // +=自己＋1
+            // let newItem = '<li>item-' + itemIndex + '</li>';
+            // es5版本
+            let newItem = `<li>item-${itemIndex}</li>`;
+            // es6版本
             $('ul').append(newItem);
         })
         // $('li').click(function () {

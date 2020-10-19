@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get-text</title>
+    <style>
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        span {
+            color: coral;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="getText">getText</button>
+    <button id="getHtml">getHtml</button>
+    <button id="getHtmlText">getHtmlText</button>
+    <h1>hello<span>world</span></h1>
+    <h2></h2>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('#getText').on('click', function () {
+            let getText = $('h1').text();
+            $('h2').text(getText);
+        })
+        // .text只取得內容文字
+        $('#getHtml').on('click', function () {
+            let getHtml = $('h1').html();
+            $('h2').html(getHtml);
+        })
+        // .html取得內容＋css設定，貼在h2會去符合h2標籤的原設定（字級大小）
+        $('#getHtmlText').on('click', function () {
+            let getHtmlText = $('h1').html();
+            $('h2').text(getHtmlText);
+        })
+        // 取得html但是以text文字形式加上，會直接出現程式碼
+    </script>
+</body>
+
+</html>

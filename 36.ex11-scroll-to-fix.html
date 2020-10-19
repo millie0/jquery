@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .row {
+            height: 300vh;
+        }
+
+        .header {
+            height: 200px;
+            background-color: darkgray;
+        }
+
+        .nav {
+            height: 80px;
+            width: 100%;
+            background-color: rgb(117, 61, 73);
+            color: darkgray;
+            text-align: center;
+            line-height: 80px;
+            font-size: 20px;
+        }
+
+        .fix {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="header"></div>
+            <div class="nav">navvvvvvvvvvvvvvvvvvv</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // console.log('navTop', $('.nav').offset().top);
+        // console.log('scrollTop', $(window).scrollTop())
+        let navTop = $('.nav').offset().top;
+        let scrollTop = $(window).scrollTop();
+
+        $(window).scroll(function () {
+            scrollTop = $(this).scrollTop();
+            // navTop = $('.nav').offset().top;
+            // 如果變數navTop設在區域作用域裡面，數值會隨著滑動改變，在fix之後兩個數值會相等造成閃動
+            console.log('scrollTop', scrollTop);
+            console.log('navTop', navTop);
+
+            if (scrollTop >= navTop) {
+                $('.nav').addClass('fix');
+            }
+            else {
+                $('.nav').removeClass('fix');
+            }
+        })
+
+    </script>
+</body>
+
+</html>

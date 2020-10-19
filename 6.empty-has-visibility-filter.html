@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
-        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>empty.visibility</title>
     <style>
 
     </style>
@@ -33,9 +31,10 @@
         <p>def</p>
     </div>
 
-    <div hidden>abc</div>
+    <div hidden>123</div>
+    <!-- bootstrap內建css有設定：display:block !important蓋過用jquery中.show()改變的inline-style：display:show -->
     <div>
-        <div>def</div>
+        <div>456</div>
     </div>
 
 
@@ -51,7 +50,7 @@
         // empty-filter
         $('div:has(p)').css('background', '#ed93fd');
         // :has()選取子層有（標籤）的
-        $('div:hidden').show();
+        $('div:hidden').css('color', 'blue').css('background', '#ccc').show();
     </script>
 </body>
 

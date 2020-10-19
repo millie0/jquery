@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>get-css</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: cornflowerblue;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="get-css">get-css</button>
+    <button class="set-css">set-css</button>
+    <div class="box"></div>
+    <p class="css-text"></p>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('.get-css').on('click', function () {
+            // console.log('get css:', $('.box').css('background-color'))
+            $('.css-text').text('css:' + $('.box').css('background-color'))
+        })
+        // 當.css('background-color')後面沒有,'顏色'的時候代表要取得資料（有的話是修改）
+        $('.set-css').on('click', function () {
+            $('.box').css('background-color', '#afa');
+        })
+    </script>
+</body>
+
+</html>

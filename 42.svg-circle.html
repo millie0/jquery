@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>svg-circle</title>
+    <link rel="icon" href="./img/favicon.ico" type="image/gif" sizes="16x16">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #444;
+        }
+
+        .circle {
+            stroke-dasharray: 1194;
+            /* 虛線的長度 */
+            stroke-dashoffset: 1194;
+        }
+
+        .circle-active {
+            animation: circle-active 1s ease-in-out;
+
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes circle-active {
+            form {
+                stroke-dashoffset: 1194;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .tick {
+            stroke-dasharray: 350;
+            stroke-dashoffset: 350;
+        }
+
+        .tick-active {
+            animation: tick-active .8s ease-out;
+            animation-fill-mode: forwards;
+            animation-delay: .6s;
+        }
+
+        @keyframes tick-active {
+            from {
+                stroke-dashoffset: 350;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        h2 {
+            transform: translateY(80px);
+            opacity: 0;
+        }
+
+        .h2-move {
+            animation: h2-move .5s ease;
+            animation-fill-mode: forwards;
+            animation-delay: .8s;
+        }
+
+        /* 點擊加上去的class css要設定animation，第一個值=加在keyframe後面的值 */
+        /* animation-fill-mode：讓動畫不歸零，保持在最後一格（跑完）的狀態 */
+
+        @keyframes h2-move {
+            from {
+                transform: translateY(80px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button>check</button>
+    <svg width="400" height="400">
+        <circle class="circle" cx="200" cy="200" r="190" fill="none" stroke="#6e4" stroke-width="20"
+            transform="rotate(-90 200 200)" stroke-linecap="round"></circle>
+        <polyline class="tick" points="88,214 173,284 304,138" fill="none" stroke="#6e4" stroke-width="20"
+            stroke-linecap="round" stroke-linejoin="round" />
+
+    </svg>
+    <h2>payment success</h2>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('button').on('click', function () {
+            $('.circle').toggleClass('circle-active')
+            $('.tick').toggleClass('tick-active')
+            $('h2').toggleClass('h2-move')
+        })
+    </script>
+</body>
+
+</html>

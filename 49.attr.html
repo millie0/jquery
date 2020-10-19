@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr</title>
+</head>
+
+<body>
+    <!-- <a href="http"></a> -->
+    <button>click</button>
+    <input type="checkbox" id="checkbox1" checked>
+    <input type="checkbox" id="checkbox2">
+
+    <!-- <img src="./imgs/giraffe-5128394_1280.jpg" alt=""> -->
+
+    <input type="text">
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // console.log('attr:', $('#checkbox1').attr('type'))
+
+
+        // console.log('img src:', $('img').attr('src'))
+
+        // WHEN ????
+        // $('img').attr({
+        //     'src': './imgs/person5.jpg',
+        //     'alt': 'person5'
+        // })
+
+
+        $('button').on('click', function () {
+            console.log('check1 attr:', $('#checkbox1').attr('checked'));
+            console.log('check2 attr:', $('#checkbox2').attr('checked'));
+
+            console.log('check1 prop:', $('#checkbox1').prop('checked'));
+            console.log('check2 prop:', $('#checkbox2').prop('checked'));
+        })
+
+    </script>
+</body>
+
+</html>

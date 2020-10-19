@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keyboard-event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.css">
+    <style>
+        .container {
+            width: 1000px;
+            height: 600px;
+            background-color: rgb(210, 210, 250);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightslategrey;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container position-relative">
+        <div class="box position-absolute"></div>
+    </div>
+    <div class="py-3 text-center">
+        <div class="py-1">
+            <button class="py-1 btn btn-info" id="up">
+                <i class="fas fa-caret-up"></i>
+            </button>
+        </div>
+        <button class="py-1 btn btn-info mr-4" id="left">
+            <i class="fas fa-caret-left"></i>
+        </button>
+        <button class="py-1 btn btn-info ml-4" id="right">
+            <i class="fas fa-caret-right"></i>
+        </button>
+        <div class="py-1">
+            <button class="py-1 btn btn-info" id="down">
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+    </div>
+</body>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+<script>
+    $(document).on('keydown', function (event) {
+        // console.log('event：', event.which)
+        // 印出event看看是什麼，event下面有很多數值，which是看每個鍵盤的編號（數字）
+        let code = event.which;
+        let Left = parseInt($('.box').css('left'));
+        let Top = parseInt($('.box').css('top'));
+        // ==絕對等於：會轉換值1==true ;===極端絕對等於：屬性相同才行字串=字串 判斷=判斷 數字=數字
+        if (code === 37) {
+            Left = parseInt($('.box').css('left'));
+            // console.log('37left:' + Left)
+            if (Left > 0) {
+                $('.box').css('left', '-=100px')
+                Left = parseInt($('.box').css('left'));
+                console.log('37left:' + Left)
+            }
+        }
+        else if (code === 39) {
+            Left = parseInt($('.box').css('left'));
+            // console.log('37left:' , Left)
+            if (Left < 900)
+                $('.box').css('left', '+=100px');
+            Left = parseInt($('.box').css('left'));
+            console.log('37left:', Left)
+        }
+        else if (code === 38) {
+            Top = parseInt($('.box').css('top'));
+            if (Top > 0) {
+                $('.box').css('top', '-=100px');
+                Top = parseInt($('.box').css('top'));
+                console.log('38top:', Top);
+            }
+        }
+        else if (code === 40) {
+            Top = parseInt($('.box').css('top'));
+            if (Top < 500)
+                $('.box').css('top', '+=100px');
+            Top = parseInt($('.box').css('top'));
+            console.log('38top:', Top);
+        }
+    })
+    // 37:左按鍵 / 38:上按鍵 / 39:右按鍵 / 40:下按鍵
+</script>
+</body>
+
+</html>

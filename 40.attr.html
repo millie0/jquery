@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 200px;
+        }
+
+        .wrap img {
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <button>click</button>
+    <input type="checkbox" id="checkbox1" checked>
+    <input type="checkbox" id="checkbox2">
+    <div class="wrap">
+        <img src="./img/8.jpg" alt="leaf">
+    </div>
+    <input type="text" value="">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+
+
+        $('button').on('click', function () {
+            console.log('checkbox1-attr:', $('#checkbox1').attr('checked'))
+            console.log('checkbox2-attr:', $('#checkbox2').attr('checked'))
+            console.log('img-src:', $('img').attr('src'))
+
+            console.log('checkbox1-prop:', $('#checkbox1').prop('checked'))
+            console.log('checkbox2-prop:', $('#checkbox2').prop('checked'))
+            console.log('input-prop:', $('input[type=text]').val())
+            let picNumber = $('input[type=text]').val();
+            $('img').attr('src', `./img/${picNumber}.jpg`)
+            // 用es6寫法，$('input[type=text]').val()取得輸入的字串，再用字串去改照片的src屬性，達到換照片的效果
+        })
+
+    </script>
+</body>
+
+</html>

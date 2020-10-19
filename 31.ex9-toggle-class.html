@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex9</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        p {
+            font-size: 1.5rem;
+        }
+
+        .sm {
+            font-size: 1rem;
+        }
+
+        .md {
+            font-size: 1.5rem;
+        }
+
+        .lg {
+            font-size: 2rem;
+        }
+
+        .active {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-between mt-5 mb-4">
+            <div class="nav-left">
+                <h2>jQuery</h2>
+            </div>
+            <div class="nav-right">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary btn-s">small</button>
+                    <button type="button" class="btn btn-secondary btn-m active">medium</button>
+                    <button type="button" class="btn btn-secondary btn-l">large</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <p class="my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, nemo. Culpa id consequuntur
+                praesentium,
+                dolorum facilis repudiandae! Praesentium autem minima numquam voluptatibus consequuntur in accusantium,
+                vitae alias aliquid expedita asperiores ex debitis illo. Autem atque sunt harum odio eius eum aliquam, a
+                perferendis, voluptatum culpa quaerat iure exercitationem animi? Hic necessitatibus possimus laudantium
+                iure. Voluptatibus similique laudantium quibusdam rem praesentium perferendis accusantium odio a ullam!
+                Velit assumenda, voluptatum culpa error ullam molestiae eius delectus vitae esse, dolor placeat, nobis
+                dolores dolorem adipisci eligendi obcaecati molestias similique numquam fugiat consequatur iste ipsum
+                ab! Deleniti alias veniam similique doloribus culpa vel saepe!
+            </p>
+            <p class="my-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo praesentium, dignissimos
+                cumque dolorum
+                quia rerum esse beatae laudantium eos, soluta explicabo quis magnam recusandae nostrum voluptatum
+                deserunt corporis veritatis nobis ut? Distinctio labore sequi, dolorem molestias nisi soluta hic
+                excepturi dolore, assumenda deleniti quae aspernatur repudiandae eaque dolorum iusto vel! Culpa quam ex
+                blanditiis magnam repudiandae repellat, aliquam deleniti. Quam a modi velit placeat illo officiis, quasi
+                beatae! Qui consequuntur obcaecati doloribus dolore repudiandae eaque incidunt tempore molestiae.
+                Cumque, rem!
+            </p>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        $('.btn-s').on('click', function () {
+            $('.row p').removeClass('md lg')
+            $('.row p').addClass('sm')
+            console.log('sm:', $('.row p').hasClass('sm'))
+
+            $('.btn').removeClass('active');
+            $('.btn-s').addClass('active');
+            // 改按鈕按下去的底色：先移除所有按鈕的.active，再加自己的.active
+        })
+        $('.btn-m').on('click', function () {
+            $('.row p').removeClass('sm lg')
+            $('.row p').toggleClass('md')
+            console.log('md:', $('.row p').hasClass('md'))
+
+            $('.btn').removeClass('active');
+            $('.btn-m').toggleClass('active');
+        })
+        $('.btn-l').on('click', function () {
+            $('.row p').removeClass('md sm')
+            $('.row p').toggleClass('lg')
+            console.log('lg:', $('.row p').hasClass('lg'))
+
+            $('.btn').removeClass('active');
+            $('.btn-l').addClass('active');
+        })
+
+    </script>
+</body>
+
+</html>

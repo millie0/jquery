@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>form-selector</title>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -80,6 +80,8 @@
         <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <p class="form-check-label" for="exampleCheck1">Check me out</p>
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
@@ -99,8 +101,8 @@
         // 粉色
         $(":checkbox + label").css("color", "red")
         // type是checkbox ＋選取隔壁的label
-        $(":checkbox ~ label").css("color", "black")
-        // ?選隔壁的隔壁為什麼會？
+        $(":checkbox ~ label").css("color", "yellow")
+        // 選同層的所有
         $(":submit").css("color", "blue")
     </script>
 </body>

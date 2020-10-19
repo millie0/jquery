@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add-remove-class</title>
+    <style>
+        button {
+            width: 150px;
+            height: 50px;
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .box {
+            height: 300px;
+            width: 300px;
+            background-color: mediumseagreen;
+            margin: 20px;
+            transition: .5s;
+        }
+
+        .active {
+            background-color: navy;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="add-class">add css</button>
+    <button id="remove-class">remove-css</button>
+    <button id="toggle-class">toggle-css</button>
+    <div class="box"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('#add-class').on('click', function () {
+            $('.box').addClass('active')
+            // active不用加點！因為已經指定在class裡面了（顯示：class="active"）
+        })
+        $('#remove-class').on('click', function () {
+            $('.box').removeClass('active')
+        })
+        $('#toggle-class').on('click', function () {
+            $('.box').toggleClass('active')
+            console.log('has-class:', $('box').hasClass('active'))
+        })
+    </script>
+</body>
+
+</html>

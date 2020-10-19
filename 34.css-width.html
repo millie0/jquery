@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-width</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 200px;
+            padding: 20px 40px;
+            margin: 40px 20px;
+            background-color: #ccc;
+            border: 5px solid black;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        console.log('width', $('.box').width());
+        // 不包含padding的寬
+        console.log('innerwidth', $('.box').innerWidth());
+        // 包含padding的寬
+        console.log('outerwidth', $('.box').outerWidth());
+        // 包含padding & border 的寬
+        console.log('height', $('.box').height());
+
+        $('.box').on('click', function () {
+            $(this).width(400);
+        })
+
+
+        let a = 123;
+        let b = 456;
+
+        // es5
+        $('.box')
+
+        $(".box")
+
+        //.box123.autobg
+        ".box" + a + ".auto" + b + "bg"
+        // <div class="" id="" sytle=""
+
+
+        // es6
+        let a = "box autobg"
+            `<div class=".box${a}.auto${b}bg" id="  " sytle=""></div>`
+
+        let day = 'sunday';
+
+        `it's {day} (123) 1231 $123112  ${day} `
+
+
+
+    </script>
+</body>
+
+</html>

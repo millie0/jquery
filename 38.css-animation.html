@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css-animation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: indianred;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="bu1">bounce</button>
+    <div class="box b1"></div>
+    <button class="bu2">flip</button>
+    <div class="box b2"></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('.bu1').on('click', function () {
+            $('.b1').toggleClass('animate__animated animate__bounce')
+        })
+        // 讓上面的方塊點擊加入動態效果的classname(head要先貼上link)
+
+        $('.bu2').on('click', function () {
+            let btnAni = 'animate__animated animate__' + $(this).text();
+            $('.b2').addClass(btnAni).one('animationend', function () {
+                $(this).removeClass(btnAni);
+            })
+        })
+        //  用animate__animated animate__（特效名）的class name
+        // 先設定變數btnAni是取按鈕文字，再用點擊按鈕去加方塊的class name產生動態效果
+
+    </script>
+</body>
+
+</html>

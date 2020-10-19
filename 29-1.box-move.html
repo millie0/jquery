@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>boxmove</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.css">
+    <style>
+        .container {
+            width: 1000px;
+            height: 600px;
+            background-color: rgb(210, 210, 250);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightslategrey;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container position-relative">
+        <div class="box position-absolute"></div>
+    </div>
+    <div class="py-3 text-center">
+        <div class="py-1">
+            <button class="py-1 btn btn-info" id="up">
+                <i class="fas fa-caret-up"></i>
+            </button>
+        </div>
+        <button class="py-1 btn btn-info mr-4" id="left">
+            <i class="fas fa-caret-left"></i>
+        </button>
+        <button class="py-1 btn btn-info ml-4" id="right">
+            <i class="fas fa-caret-right"></i>
+        </button>
+        <div class="py-1">
+            <button class="py-1 btn btn-info" id="down">
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+    </div>
+</body>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+<script>
+    let Left = parseInt($('.box').css('left'));
+    let Top = parseInt($('.box').css('top'));
+    // 字串跟字串不能比大小 函式parseInt()可以把字串變數字
+    // 轉換邏輯：從左開始，拿到連續數字，碰到數字以外的就停止抓取
+    $('#up').on('click', function () {
+        Top = parseInt($('.box').css('top'));
+        // 全域變數已經有let宣告過,函式內更新變數
+        console.log('up' + Top)
+        if (Top > 0) {
+            $('.box').css('top', '-=100px');
+            console.log(Top)
+        }
+    });
+
+    $('#down').on('click', function () {
+        Top = parseInt($('.box').css('top'));
+        console.log('down' + Top)
+        if (Top < 500) {
+            $('.box').css('top', '+=100px');
+            console.log(Top)
+        }
+    });
+    $('#right').on('click', function () {
+        Left = parseInt($('.box').css('left'));
+        console.log('right' + Left);
+        if (Left < 900) {
+            $('.box').css('left', '+=100px')
+            Left = $('.box').css('left');
+            console.log(Left)
+        }
+    });
+    $('#left').on('click', function () {
+        Left = parseInt($('.box').css('left'));
+        console.log('left' + Left);
+        if (Left > 0) {
+            $('.box').css('left', '-=100px')
+            console.log(Left)
+        }
+    });
+</script>
+</body>
+
+</html>
