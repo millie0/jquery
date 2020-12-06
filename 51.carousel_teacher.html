@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5 carousel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        .wrap {
+            width: 800px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .img-wrap {
+            left: 0;
+            transition: .5s;
+            width: 4800px;
+            /* left: -1600px; */
+        }
+
+        .img-wrap li {
+            /* flex-basis: 0;
+            flex-grow: 1; */
+
+            /* grow shirk basis */
+            flex: 1 0 0;
+        }
+
+        li img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slider-dots {
+            bottom: 0;
+        }
+
+        .slider-dots li {
+            width: 40px;
+            height: 10px;
+            margin: 0 4px;
+            border: 1px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap position-relative">
+        <ul class="img-wrap list-unstyled d-flex position-absolute">
+            <li><img src="./img/1.jpg" alt=""></li>
+            <li><img src="./img/2.jpg" alt=""></li>
+            <li><img src="./img/3.jpg" alt=""></li>
+            <li><img src="./img/5.jpg" alt=""></li>
+            <li><img src="./img/6.jpg" alt=""></li>
+            <li><img src="./img/1.jpg" alt=""></li>
+
+        </ul>
+
+        <ul class="position-absolute slider-dots list-unstyled d-flex justify-content-center w-100">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        let index = 0;
+
+        $('.slider-dots li').first().css('background', '#fff');
+
+        $('.slider-dots li').hover(function () {
+            console.log('hi', $(this).index());
+            $(this).css('background', '#fff').siblings().css('background', 'none');
+
+            $('.img-wrap').css('left', -800 * $(this).index());
+            index = $(this).index();
+        })
+
+
+
+        setInterval(function () {
+
+            index = index + 1;
+            //imgIndex
+            $('.img-wrap').css('transition', '0.5s').css('left', -800 * index);
+
+
+
+            // 三元 
+            let dotsIndex = (index > 4) ? 0 : index
+            // dots index
+            $('.slider-dots li').eq(dotsIndex).css('background', '#fff').siblings().css('background', 'none');
+
+            // index = index + 1;
+
+        }, 2000);
+
+        $('.img-wrap').on('transitionend webkitTransitionEnd oTransitionEnd', function () {
+            console.log('index:', index);
+            if (index == 5) {
+                $('.img-wrap').css('transition', 'none').css('left', 0);
+                index = 0;
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>
